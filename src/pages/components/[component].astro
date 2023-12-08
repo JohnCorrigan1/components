@@ -26,12 +26,12 @@ for (const componentItem of componentData) {
   <main class="flex w-full min-w-[100vw] h-full">
     <ComponentList transition:persist />
     <section
-      class="flex flex-col w-full bg-opacity-20 gap-10 px-32">
+      class="flex flex-col w-full bg-opacity-20 gap-10 px-32 py-20">
       <h1 class="text-white text-3xl text-center font-bold">
         {componentPage.name}
       </h1>
       <Navbar />
-      <CodeBlock code={componentPage.code} client:load />
+      <CodeBlock code={componentPage.code} />
     </section>
   </main>
 </Layout>

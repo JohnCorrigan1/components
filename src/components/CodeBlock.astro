@@ -12,24 +12,14 @@ const { code } = Astro.props;
     class="text-white absolute right-5 cursor-pointer hover:opacity-30 duration-200 font-semibold active:scale-95">
     Copy
   </div>
-  <Code
-    class:list={["code", ""]}
-    code={code}
-    lang="html"
-    theme="poimandres"
-  />
+  <Code code={code} lang="html" theme="poimandres" />
 </div>
 
 <script>
   const copy = document?.getElementById("copy");
 
   copy?.addEventListener("click", function (event: any) {
-    console.log("copy");
-    const el = document.createElement("textarea");
-    el.value = event?.target.getAttribute("data-code");
-    document.body.appendChild(el);
-    el.select();
-    document.execCommand("copy");
-    document.body.removeChild(el);
+    const code = event?.target.getAttribute("data-code");
+    navigator.clipboard.writeText(code);
   });
 </script>

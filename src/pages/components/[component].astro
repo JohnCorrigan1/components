@@ -1,0 +1,37 @@
+---
+import { componentData } from "../../components";
+import Navbar from "../../components/Previews/Navbar.astro";
+import CodeBlock from "../../components/CodeBlock.astro";
+import ComponentList from "../../components/ComponentList.astro";
+import Layout from "../../layouts/Layout.astro";
+
+export function getStaticPaths() {
+  return [
+    { params: { component: "navbar" } },
+    { params: { component: "sidebar" } },
+  ];
+}
+const { component } = Astro.params;
+
+let componentPage: any = null;
+for (const componentItem of componentData) {
+  if (componentItem.name.toLowerCase() == component) {
+    componentPage = componentItem;
+    break;
+  }
+}
+---
+
+<Layout title={componentPage.name}>
+  <main class="flex w-full min-w-[100vw] h-full">
+    <ComponentList transition:persist />
+    <section
+      class="flex flex-col w-full bg-opacity-20 gap-10 px-32">
+      <h1 class="text-white text-3xl text-center font-bold">
+        {componentPage.name}
+      </h1>
+      <Navbar />
+      <CodeBlock code={componentPage.code} client:load />
+    </section>
+  </main>
+</Layout>

@@ -1,0 +1,19 @@
+---
+import ComponentLink from "./ComponentLink.astro";
+import { componentData } from "../components";
+---
+
+<section
+  transition:persist
+  class="mr-auto w-1/4 h-full min-h-[100vh] flex flex-col font-semibold text-lg">
+  {
+    componentData.map((component) => {
+      return (
+        <ComponentLink
+          name={component.name}
+          link={component.link}
+        />
+      );
+    })
+  }
+</section>

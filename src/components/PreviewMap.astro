@@ -1,0 +1,33 @@
+---
+import Navbar from "./Previews/Navbar.astro";
+import Card from "./Previews/Card.astro";
+// import { componentData } from "../components";
+// import type { ComponentData } from "../components";
+
+const { component } = Astro.props;
+
+const componentData = [component];
+---
+
+{
+  componentData.map((componentt: string) => {
+    switch (component) {
+      case "Navbar":
+        return <Navbar {...component} />;
+      case "Card":
+        return (
+          <div class="w-full flex justify-center">
+            <Card {...component} />
+          </div>
+        );
+      default:
+        return (
+          <div class="w-full flex justify-center">
+            <h1 class="text-white font-semibold p-5">
+              No preview yet...
+            </h1>
+          </div>
+        );
+    }
+  })
+}

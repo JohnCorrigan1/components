@@ -19,6 +19,7 @@ const { code } = Astro.props;
   const copy = document?.getElementById("copy");
 
   copy?.addEventListener("click", function (event: any) {
+    console.log("copu");
     const code = event?.target.getAttribute("data-code");
     navigator.clipboard.writeText(code);
   });

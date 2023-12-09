@@ -2,11 +2,29 @@
 
 ---
 
-<nav class="flex justify-between p-5 bg-slate-700 bg-opacity-30 rounded-lg">
-  <h1 class="text-white font-bold text-3xl">Logo</h1>
-  <ul class="flex gap-5 font-semibold text-white text-lg">
-    <li class="hover:underline active:scale-95 duration-300"><a href="">Link 1</a></li>
-    <li class="hover:underline active:scale-95 duration-300"><a href="">Link 2</a></li>
-    <li class="hover:underline active:scale-95 duration-300"><a href="">Link 3</a></li>
+<nav
+  class="flex justify-between p-5 bg-slate-700 bg-opacity-30 items-center">
+  <h1 class="cursor-pointer text-white font-bold text-3xl">
+    <a href=""> Logo</a>
+  </h1>
+  <section class="flex flex-col gap-1 md:hidden">
+    <div class="h-1 w-7 bg-white"></div>
+    <div class="h-1 w-7 bg-white"></div>
+    <div class="h-1 w-7 bg-white"></div>
+  </section>
+  <ul
+    class="gap-5 font-semibold text-white text-lg hidden md:flex">
+    <li
+      class="hover:underline active:scale-95 duration-300">
+      <a href="">Link 1</a>
+    </li>
+    <li
+      class="hover:underline active:scale-95 duration-300">
+      <a href="">Link 2</a>
+    </li>
+    <li
+      class="hover:underline active:scale-95 duration-300">
+      <a href="">Link 3</a>
+    </li>
   </ul>
 </nav>

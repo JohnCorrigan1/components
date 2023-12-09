@@ -1,14 +1,15 @@
 ---
 import { componentData } from "../../components";
-import Navbar from "../../components/Previews/Navbar.astro";
 import CodeBlock from "../../components/CodeBlock.astro";
 import ComponentList from "../../components/ComponentList.astro";
 import Layout from "../../layouts/Layout.astro";
+import PreviewMap from "../../components/PreviewMap.astro";
 
 export function getStaticPaths() {
   return [
     { params: { component: "navbar" } },
     { params: { component: "sidebar" } },
+    { params: { component: "card" } },
   ];
 }
 const { component } = Astro.params;
@@ -26,11 +27,13 @@ for (const componentItem of componentData) {
   <main class="flex w-full min-w-[100vw] h-full">
     <ComponentList transition:persist />
     <section
-      class="flex flex-col w-full bg-opacity-20 gap-10 px-32 py-20">
-      <h1 class="text-white text-3xl text-center font-bold">
+      class="flex flex-col w-full bg-opacity-20 gap-16 px-32 py-20">
+      <h1
+        id="componentName"
+        class="text-white text-3xl text-center font-bold">
         {componentPage.name}
       </h1>
-      <Navbar />
+      <PreviewMap component={componentPage.name} />
       <CodeBlock code={componentPage.code} />
     </section>
   </main>

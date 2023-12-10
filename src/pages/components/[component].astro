@@ -10,13 +10,17 @@ export function getStaticPaths() {
     { params: { component: "navbar" } },
     { params: { component: "sidebar" } },
     { params: { component: "card" } },
+    { params: { component: "full-image-card" } },
   ];
 }
 const { component } = Astro.params;
 
 let componentPage: any = null;
 for (const componentItem of componentData) {
-  if (componentItem.name.toLowerCase() == component) {
+  if (
+    componentItem.name.toLowerCase() ==
+    component.replace(/-/g, " ")
+  ) {
     componentPage = componentItem;
     break;
   }

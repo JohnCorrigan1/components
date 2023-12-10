@@ -1,12 +1,10 @@
 ---
 import Navbar from "./Previews/Navbar.astro";
 import Card from "./Previews/Card.astro";
-// import { componentData } from "../components";
-// import type { ComponentData } from "../components";
+import FullImageCard from "./Previews/FullImageCard.astro";
 
 const { component } = Astro.props;
-
-const componentData = [component];
+const componentData = [component.replace(/"/g, "")];
 ---
 
 {
@@ -18,6 +16,12 @@ const componentData = [component];
         return (
           <div class="w-full flex justify-center">
             <Card {...component} />
+          </div>
+        );
+      case "Full Image Card":
+        return (
+          <div class="w-full flex justify-center">
+            <FullImageCard {...component} />
           </div>
         );
       default:

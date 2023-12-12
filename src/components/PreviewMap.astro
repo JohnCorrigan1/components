@@ -2,6 +2,8 @@
 import Navbar from "./Previews/Navbar.astro";
 import Card from "./Previews/Card.astro";
 import FullImageCard from "./Previews/FullImageCard.astro";
+import Hero from "./Previews/Hero.astro";
+import ContactForm from "./Previews/ContactForm.astro";
 
 const { component } = Astro.props;
 const componentData = [component.replace(/"/g, "")];
@@ -22,6 +24,18 @@ const componentData = [component.replace(/"/g, "")];
         return (
           <div class="w-full flex justify-center">
             <FullImageCard {...component} />
+          </div>
+        );
+      case "Hero":
+        return (
+          <div class="w-full flex justify-center">
+            <Hero {...component} />
+          </div>
+        );
+      case "Contact Form":
+        return (
+          <div class="w-full flex justify-center">
+            <ContactForm {...component} />
           </div>
         );
       default:

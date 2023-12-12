@@ -11,6 +11,8 @@ export function getStaticPaths() {
     { params: { component: "sidebar" } },
     { params: { component: "card" } },
     { params: { component: "full-image-card" } },
+    { params: { component: "hero" } },
+    { params: { component: "contact-form" } },
   ];
 }
 const { component } = Astro.params;
@@ -28,7 +30,8 @@ for (const componentItem of componentData) {
 ---
 
 <Layout title={componentPage.name}>
-  <main class="flex w-full min-w-[100vw] h-full">
+  <main
+    class="flex w-full min-w-[100vw] h-full max-w-[100vw]">
     <ComponentList transition:persist />
     <section
       class="flex flex-col w-full bg-opacity-20 gap-16 px-32 py-20">
@@ -38,6 +41,10 @@ for (const componentItem of componentData) {
         {componentPage.name}
       </h1>
       <PreviewMap component={componentPage.name} />
+      <div
+        class="text-white font-semibold w-full flex justify-center text-lg">
+        <p>{componentPage.description}</p>
+      </div>
       <CodeBlock code={componentPage.code} />
     </section>
   </main>

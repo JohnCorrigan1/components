@@ -3,6 +3,8 @@ import ComponentLink from "./ComponentLink.astro";
 import {
   navComponents,
   cardComponents,
+  heroComponents,
+  formComponents,
 } from "../components";
 import ComponentCategory from "./ComponentCategory.astro";
 ---
@@ -25,6 +27,30 @@ import ComponentCategory from "./ComponentCategory.astro";
   <ComponentCategory name="Cards" />
   {
     cardComponents.map((component) => {
+      return (
+        <ComponentLink
+          name={component.name}
+          link={component.link}
+        />
+      );
+    })
+  }
+
+  <ComponentCategory name="Heros" />
+  {
+    heroComponents.map((component) => {
+      return (
+        <ComponentLink
+          name={component.name}
+          link={component.link}
+        />
+      );
+    })
+  }
+
+  <ComponentCategory name="Forms" />
+  {
+    formComponents.map((component) => {
       return (
         <ComponentLink
           name={component.name}

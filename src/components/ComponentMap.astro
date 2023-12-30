@@ -1,0 +1,71 @@
+---
+import ComponentLink from "./ComponentLink.astro";
+import {
+  navComponents,
+  cardComponents,
+  heroComponents,
+  formComponents,
+  buttonComponents,
+} from "../components";
+import ComponentCategory from "./ComponentCategory.astro";
+---
+
+<ComponentLink name="Home" link="/" />
+<ComponentCategory name="Navigation" />
+{
+  navComponents.map((component) => {
+    return (
+      <ComponentLink
+        name={component.name}
+        link={component.link}
+      />
+    );
+  })
+}
+<ComponentCategory name="Cards" />
+{
+  cardComponents.map((component) => {
+    return (
+      <ComponentLink
+        name={component.name}
+        link={component.link}
+      />
+    );
+  })
+}
+
+<ComponentCategory name="Heros" />
+{
+  heroComponents.map((component) => {
+    return (
+      <ComponentLink
+        name={component.name}
+        link={component.link}
+      />
+    );
+  })
+}
+
+<ComponentCategory name="Forms" />
+{
+  formComponents.map((component) => {
+    return (
+      <ComponentLink
+        name={component.name}
+        link={component.link}
+      />
+    );
+  })
+}
+
+<ComponentCategory name="Buttons" />
+{
+  buttonComponents.map((component) => {
+    return (
+      <ComponentLink
+        name={component.name}
+        link={component.link}
+      />
+    );
+  })
+}

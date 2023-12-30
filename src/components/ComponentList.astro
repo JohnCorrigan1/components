@@ -1,62 +1,50 @@
 ---
-import ComponentLink from "./ComponentLink.astro";
-import {
-  navComponents,
-  cardComponents,
-  heroComponents,
-  formComponents,
-} from "../components";
-import ComponentCategory from "./ComponentCategory.astro";
+import ComponentMap from "./ComponentMap.astro";
 ---
 
 <section
   transition:persist
-  class="mr-auto w-1/4 h-full min-h-[100vh] flex flex-col font-semibold text-lg">
-  <ComponentLink name="Home" link="/" />
-  <ComponentCategory name="Navigation" />
-  {
-    navComponents.map((component) => {
-      return (
-        <ComponentLink
-          name={component.name}
-          link={component.link}
-        />
-      );
-    })
-  }
-  <ComponentCategory name="Cards" />
-  {
-    cardComponents.map((component) => {
-      return (
-        <ComponentLink
-          name={component.name}
-          link={component.link}
-        />
-      );
-    })
-  }
-
-  <ComponentCategory name="Heros" />
-  {
-    heroComponents.map((component) => {
-      return (
-        <ComponentLink
-          name={component.name}
-          link={component.link}
-        />
-      );
-    })
-  }
-
-  <ComponentCategory name="Forms" />
-  {
-    formComponents.map((component) => {
-      return (
-        <ComponentLink
-          name={component.name}
-          link={component.link}
-        />
-      );
-    })
-  }
+  class="mr-auto w-1/4 h-full min-h-[100vh] hidden xl:flex flex-col font-semibold text-lg">
+  <ComponentMap />
 </section>
+<div
+  id="mobileMenu"
+  class="w-16 absolute top-0 left-0 h-screen z-10 duration-500">
+  <section class="xl:hidden flex">
+    <div
+      id="hamburger"
+      class="flex flex-col gap-1 absolute top-5 right-5 cursor-pointer">
+      <span id="top" class="bg-white h-0.5 w-6 duration-300"
+      ></span>
+      <span id="mid" class="bg-white h-0.5 w-6 duration-100"
+      ></span>
+      <span
+        id="bottom"
+        class="bg-white h-0.5 w-6 duration-300"></span>
+    </div>
+  </section>
+  <div id="map" class="hidden">
+    <ComponentMap />
+  </div>
+</div>
+
+<script>
+  const hamburger = document.getElementById("hamburger");
+  const top = document.getElementById("top");
+  const mid = document.getElementById("mid");
+  const bottom = document.getElementById("bottom");
+  const menu = document.getElementById("mobileMenu");
+  const map = document.getElementById("map");
+
+  hamburger?.addEventListener("click", () => {
+    top?.classList.toggle("rotate-45");
+    top?.classList.toggle("translate-y-3");
+    mid?.classList.toggle("opacity-0");
+    bottom?.classList.toggle("-rotate-45");
+    menu?.classList.toggle("bg-slate-700");
+    menu?.classList.toggle("bg-opacity-80");
+    menu?.classList.toggle("w-16");
+    menu?.classList.toggle("w-full");
+    map?.classList.toggle("hidden");
+  });
+</script>

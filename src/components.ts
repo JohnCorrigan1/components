@@ -48,6 +48,13 @@ export const formComponents: ComponentCategory[] = [
   },
 ];
 
+export const buttonComponents: ComponentCategory[] = [
+  {
+    name: "Hamburger Animation",
+    link: "/components/hamburger-animation",
+  },
+];
+
 export const componentData: ComponentData[] = [
   {
     name: "Navbar",
@@ -238,5 +245,37 @@ export const componentData: ComponentData[] = [
     category: "Forms",
     description: "A simple contact form component.",
     hasAnimation: false,
+  },
+  {
+    name: "Hamburger Animation",
+    link: "/components/hamburger-animation",
+    code: `
+<section class="xl:hidden flex">
+  <div
+    id="hamburger"
+    class="flex flex-col gap-1 absolute top-5 left-5 cursor-pointer">
+    <span id="top" class="bg-white h-0.5 w-6 duration-300"></span>
+    <span id="mid" class="bg-white h-0.5 w-6 duration-100"></span>
+    <span id="bottom" class="bg-white h-0.5 w-6 duration-300"></span>
+  </div>
+</section>
+
+<script>
+  const hamburger = document.getElementById("hamburger");
+  const top = document.getElementById("top");
+  const mid = document.getElementById("mid");
+  const bottom = document.getElementById("bottom");
+
+  hamburger?.addEventListener("click", () => {
+    top?.classList.toggle("rotate-45");
+    top?.classList.toggle("translate-y-3");
+    mid?.classList.toggle("opacity-0");
+    bottom?.classList.toggle("-rotate-45");
+  });
+</script>
+    `,
+    category: "Buttons",
+    description: "A simple hamburger animation component.",
+    hasAnimation: true,
   },
 ];

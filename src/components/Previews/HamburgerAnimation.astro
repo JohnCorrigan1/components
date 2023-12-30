@@ -1,0 +1,35 @@
+---
+
+---
+
+<section class="">
+  <div
+    id="hamburgerPreview"
+    class="flex flex-col gap-1 cursor-pointer">
+    <span
+      id="topPreview"
+      class="bg-white h-0.5 w-6 duration-300"></span>
+    <span
+      id="midPreview"
+      class="bg-white h-0.5 w-6 duration-100"></span>
+    <span
+      id="bottomPreview"
+      class="bg-white h-0.5 w-6 duration-300"></span>
+  </div>
+</section>
+
+<script>
+  const hamburger = document.getElementById(
+    "hamburgerPreview"
+  );
+  const top = document.getElementById("topPreview");
+  const mid = document.getElementById("midPreview");
+  const bottom = document.getElementById("bottomPreview");
+
+  hamburger?.addEventListener("click", () => {
+    top?.classList.toggle("rotate-45");
+    top?.classList.toggle("translate-y-3");
+    mid?.classList.toggle("opacity-0");
+    bottom?.classList.toggle("-rotate-45");
+  });
+</script>

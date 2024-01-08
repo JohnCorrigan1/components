@@ -19,17 +19,19 @@
 </section>
 
 <script>
-  const hamburger = document.getElementById(
-    "hamburgerPreview"
-  );
-  const top = document.getElementById("topPreview");
-  const mid = document.getElementById("midPreview");
-  const bottom = document.getElementById("bottomPreview");
+  document?.addEventListener("astro:page-load", () => {
+    const hamburger = document.getElementById(
+      "hamburgerPreview"
+    );
+    const top = document.getElementById("topPreview");
+    const mid = document.getElementById("midPreview");
+    const bottom = document.getElementById("bottomPreview");
 
-  hamburger?.addEventListener("click", () => {
-    top?.classList.toggle("rotate-45");
-    top?.classList.toggle("translate-y-3");
-    mid?.classList.toggle("opacity-0");
-    bottom?.classList.toggle("-rotate-45");
+    hamburger?.addEventListener("click", () => {
+      top?.classList.toggle("rotate-45");
+      top?.classList.toggle("translate-y-3");
+      mid?.classList.toggle("opacity-0");
+      bottom?.classList.toggle("-rotate-45");
+    });
   });
 </script>

@@ -23,10 +23,12 @@ const { title } = Astro.props;
     <ViewTransitions />
   </head>
   <body
-    class="w-[100vw] min-h-[100vh] max-w-[100vw] overflow-x-hidden">
+    class="w-[100vw] min-h-[100vh] max-w-[100vw] h-full overflow-x-hidden">
     <slot />
     <style is:global>
       :root {
+        --thumb-radius-top: 6px;
+        --thumb-radius-bottom: 6px;
         --accent: 136, 58, 234;
         --accent-light: 224, 204, 250;
         --accent-dark: 49, 10, 101;
@@ -52,6 +54,29 @@ const { title } = Astro.props;
           Bitstream Vera Sans Mono,
           Courier New,
           monospace;
+      }
+      body {
+        scroll-behavior: smooth;
+      }
+      ::-webkit-scrollbar {
+        width: 10px;
+        /* border-radius: 10px; */
+      }
+
+      ::-webkit-scrollbar-track {
+        background-color: #666;
+      }
+
+      ::-webkit-scrollbar-thumb {
+        background-color: #5fb3a1;
+        border-top-right-radius: var(--thumb-radius-top);
+        border-top-left-radius: var(--thumb-radius-top);
+        border-bottom-right-radius: var(
+          --thumb-radius-bottom
+        );
+        border-bottom-left-radius: var(
+          --thumb-radius-bottom
+        );
       }
     </style>
   </body>

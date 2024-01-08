@@ -4,9 +4,9 @@ import { Code } from "astro:components";
 const { code } = Astro.props;
 ---
 
-<div class="w-full flex justify-center">
+<div class="w-full flex justify-center max-w-screen">
   <div
-    class="flex h-fit w-fit bg-[#1b1e28] p-12 relative rounded-lg">
+    class="flex h-fit w-fit bg-[#1b1e28] 2xl:p-12 xl:p-8 p-6 relative rounded-lg max-w-[90vw]">
     <div
       id="copy"
       data-code={code}
@@ -31,11 +31,12 @@ const { code } = Astro.props;
 </div>
 
 <script>
-  const copy = document?.getElementById("copy");
-
-  copy?.addEventListener("click", function (event: any) {
-    console.log("copu");
-    const code = event?.target.getAttribute("data-code");
-    navigator.clipboard.writeText(code);
+  document?.addEventListener("astro:page-load", () => {
+    const copy = document?.getElementById("copy");
+    copy?.addEventListener("click", function (event: any) {
+      console.log("copu");
+      const code = event?.target.getAttribute("data-code");
+      navigator.clipboard.writeText(code);
+    });
   });
 </script>

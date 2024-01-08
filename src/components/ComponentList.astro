@@ -2,11 +2,14 @@
 import ComponentMap from "./ComponentMap.astro";
 ---
 
-<section
-  transition:persist
-  class="mr-auto w-1/4 h-full min-h-[100vh] hidden xl:flex flex-col font-semibold text-lg min-w-[250px] bg-slate-800 bg-opacity-20">
-  <ComponentMap />
-</section>
+<div
+  class="mr-auto w-1/4 min-w-[275px] h-screen hidden xl:block">
+  <section
+    transition:persist
+    class="mr-auto w-1/4 h-screen hidden xl:flex flex-col font-semibold text-lg min-w-[275px] bg-slate-800 bg-opacity-20 overflow-y-scroll fixed">
+    <ComponentMap />
+  </section>
+</div>
 <div
   id="mobileMenu"
   class="w-16 absolute top-0 left-0 h-screen z-10 duration-500">
@@ -29,23 +32,27 @@ import ComponentMap from "./ComponentMap.astro";
 </div>
 
 <script>
-  const hamburger = document.getElementById("hamburger");
-  const top = document.getElementById("top");
-  const mid = document.getElementById("mid");
-  const bottom = document.getElementById("bottom");
-  const menu = document.getElementById("mobileMenu");
-  const map = document.getElementById("map");
+  document?.addEventListener("astro:page-load", () => {
+    const hamburger = document.getElementById("hamburger");
+    hamburger?.addEventListener("click", () => {
+      const top = document.getElementById("top");
+      const mid = document.getElementById("mid");
+      const bottom = document.getElementById("bottom");
+      const menu = document.getElementById("mobileMenu");
+      const map = document.getElementById("map");
 
-  hamburger?.addEventListener("click", () => {
-    top?.classList.toggle("rotate-45");
-    top?.classList.toggle("translate-y-3");
-    mid?.classList.toggle("opacity-0");
-    bottom?.classList.toggle("-rotate-45");
-    menu?.classList.toggle("bg-slate-900");
-    menu?.classList.toggle("bg-opacity-90");
-    menu?.classList.toggle("w-16");
-    menu?.classList.toggle("w-full");
-    map?.classList.toggle("flex");
-    map?.classList.toggle("hidden");
+      top?.classList.toggle("rotate-45");
+      top?.classList.toggle("translate-y-3");
+      mid?.classList.toggle("opacity-0");
+      bottom?.classList.toggle("-rotate-45");
+      menu?.classList.toggle("bg-slate-900");
+      menu?.classList.toggle("bg-opacity-90");
+      menu?.classList.toggle("w-16");
+      menu?.classList.toggle("w-full");
+      map?.classList.toggle("flex");
+      map?.classList.toggle("hidden");
+      menu?.classList.toggle("overflow-y-scroll");
+      document?.body?.classList.toggle("overflow-hidden");
+    });
   });
 </script>

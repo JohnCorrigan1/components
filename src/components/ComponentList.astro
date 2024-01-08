@@ -4,7 +4,7 @@ import ComponentMap from "./ComponentMap.astro";
 
 <section
   transition:persist
-  class="mr-auto w-1/4 h-full min-h-[100vh] hidden xl:flex flex-col font-semibold text-lg">
+  class="mr-auto w-1/4 h-full min-h-[100vh] hidden xl:flex flex-col font-semibold text-lg min-w-[250px] bg-slate-800 bg-opacity-20">
   <ComponentMap />
 </section>
 <div
@@ -23,7 +23,7 @@ import ComponentMap from "./ComponentMap.astro";
         class="bg-white h-0.5 w-6 duration-300"></span>
     </div>
   </section>
-  <div id="map" class="hidden">
+  <div id="map" class="hidden flex-col">
     <ComponentMap />
   </div>
 </div>
@@ -41,10 +41,11 @@ import ComponentMap from "./ComponentMap.astro";
     top?.classList.toggle("translate-y-3");
     mid?.classList.toggle("opacity-0");
     bottom?.classList.toggle("-rotate-45");
-    menu?.classList.toggle("bg-slate-700");
-    menu?.classList.toggle("bg-opacity-80");
+    menu?.classList.toggle("bg-slate-900");
+    menu?.classList.toggle("bg-opacity-90");
     menu?.classList.toggle("w-16");
     menu?.classList.toggle("w-full");
+    map?.classList.toggle("flex");
     map?.classList.toggle("hidden");
   });
 </script>

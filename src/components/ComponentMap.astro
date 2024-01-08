@@ -10,7 +10,11 @@ import {
 import ComponentCategory from "./ComponentCategory.astro";
 ---
 
-<ComponentLink name="Home" link="/" />
+<a
+  href="/"
+  class="text-white py-5 pt-10 w-full text-center hover:text-emerald-500 text-xl font-semibold"
+  >Home</a
+>
 <ComponentCategory name="Navigation" />
 {
   navComponents.map((component) => {

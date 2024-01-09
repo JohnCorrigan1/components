@@ -3,10 +3,13 @@ import ComponentMap from "./ComponentMap.astro";
 ---
 
 <div
-  class="mr-auto w-1/4 min-w-[275px] h-screen hidden xl:block">
+  class="mr-auto w-1/5 min-w-[250px] h-screen hidden xl:block py-10">
   <section
     transition:persist
-    class="mr-auto w-1/4 h-screen hidden xl:flex flex-col font-semibold text-lg min-w-[275px] bg-slate-800 bg-opacity-20 overflow-y-scroll fixed">
+    class="mr-auto w-1/5 h-full hidden xl:flex flex-col font-semibold text-lg min-w-[250px] bg-opacity-20 overflow-y-scroll fixed">
+    <ComponentMap />
+    <ComponentMap />
+    <ComponentMap />
     <ComponentMap />
   </section>
 </div>

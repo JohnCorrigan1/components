@@ -15,50 +15,50 @@ export type ComponentCategory = {
 export const cardComponents: ComponentCategory[] = [
   {
     name: "Card",
-    link: "/components/card",
+    link: "/card",
   },
   {
     name: "Full Image Card",
-    link: "/components/full-image-card",
+    link: "/full-image-card",
   },
 ];
 
 export const navComponents: ComponentCategory[] = [
   {
     name: "Navbar",
-    link: "/components/navbar",
+    link: "/navbar",
   },
   {
     name: "Sidebar",
-    link: "/components/sidebar",
+    link: "/sidebar",
   },
 ];
 
 export const heroComponents: ComponentCategory[] = [
   {
     name: "Hero",
-    link: "/components/hero",
+    link: "/hero",
   },
 ];
 
 export const formComponents: ComponentCategory[] = [
   {
     name: "Contact Form",
-    link: "/components/contact-form",
+    link: "/contact-form",
   },
 ];
 
 export const buttonComponents: ComponentCategory[] = [
   {
-    name: "Hamburger Animation",
-    link: "/components/hamburger-animation",
+    name: "Hamburger",
+    link: "/hamburger",
   },
 ];
 
 export const componentData: ComponentData[] = [
   {
     name: "Navbar",
-    link: "/components/navbar",
+    link: "/navbar",
     code: `
     <nav class="flex justify-between p-5 bg-slate-700 bg-opacity-30 items-center">
         <h1 class="cursor-pointer text-white font-bold text-3xl">
@@ -88,7 +88,7 @@ export const componentData: ComponentData[] = [
   },
   {
     name: "Sidebar",
-    link: "/components/sidebar",
+    link: "/sidebar",
     code: `<div class="some classes will go here tailwind">
                 <h1>Logo</h1>
                 <ul>
@@ -103,7 +103,7 @@ export const componentData: ComponentData[] = [
   },
   {
     name: "Card",
-    link: "/components/card",
+    link: "/card",
     code: `
     <div class="flex flex-col overflow-hidden max-w-xl items-center bg-slate-700
      bg-opacity-60 hover:bg-opacity-40 cursor-pointer shadow-lg drop-shadow-lg rounded-lg duration-300">
@@ -122,7 +122,7 @@ export const componentData: ComponentData[] = [
   },
   {
     name: "Full Image Card",
-    link: "/components/full-image-card",
+    link: "/full-image-card",
     code: `
     <a href="">
         <div class="relative duration-500 cursor-pointer text-white rounded-lg w-full">
@@ -144,7 +144,7 @@ export const componentData: ComponentData[] = [
   },
   {
     name: "Hero",
-    link: "/components/hero",
+    link: "/hero",
     code: `
     <section
       class="w-full h-full flex justify-center items-center p-20 flex-col gap-10">
@@ -247,8 +247,8 @@ export const componentData: ComponentData[] = [
     hasAnimation: false,
   },
   {
-    name: "Hamburger Animation",
-    link: "/components/hamburger-animation",
+    name: "Hamburger",
+    link: "/hamburger",
     code: `
 <section class="xl:hidden flex">
   <div
@@ -275,7 +275,7 @@ export const componentData: ComponentData[] = [
 </script>
     `,
     category: "Buttons",
-    description: "A simple hamburger animation component.",
+    description: "Animatited hamburger component.",
     hasAnimation: true,
   },
 ];

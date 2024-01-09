@@ -2,8 +2,6 @@
 const { name, link } = Astro.props;
 ---
 
-<div class="rounded-lg">
-  <h1 class="font-semibold text-xl text-white px-5 py-5">
-    <a href={link}>{name}</a>
-  </h1>
-</div>
+<h1 class="font-semibold text-lg text-white">
+  <a href={link}>{name}</a>
+</h1>

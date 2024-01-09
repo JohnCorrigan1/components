@@ -4,7 +4,7 @@ import Card from "./Previews/Card.astro";
 import FullImageCard from "./Previews/FullImageCard.astro";
 import Hero from "./Previews/Hero.astro";
 import ContactForm from "./Previews/ContactForm.astro";
-import HamburgerAnimation from "./Previews/HamburgerAnimation.astro";
+import Hamburger from "./Previews/Hamburger.astro";
 
 const { component } = Astro.props;
 const componentData = [component.replace(/"/g, "")];
@@ -39,10 +39,10 @@ const componentData = [component.replace(/"/g, "")];
             <ContactForm {...component} />
           </div>
         );
-      case "Hamburger Animation":
+      case "Hamburger":
         return (
           <div class="w-full flex justify-center">
-            <HamburgerAnimation {...component} />
+            <Hamburger {...component} />
           </div>
         );
       default:

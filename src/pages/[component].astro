@@ -1,9 +1,9 @@
 ---
-import { componentData } from "../../components";
-import CodeBlock from "../../components/CodeBlock.astro";
-import ComponentList from "../../components/ComponentList.astro";
-import Layout from "../../layouts/Layout.astro";
-import PreviewMap from "../../components/PreviewMap.astro";
+import { componentData } from "../components";
+import CodeBlock from "../components/CodeBlock.astro";
+import ComponentList from "../components/ComponentList.astro";
+import Layout from "../layouts/Layout.astro";
+import PreviewMap from "../components/PreviewMap.astro";
 
 export function getStaticPaths() {
   return [
@@ -13,7 +13,7 @@ export function getStaticPaths() {
     { params: { component: "full-image-card" } },
     { params: { component: "hero" } },
     { params: { component: "contact-form" } },
-    { params: { component: "hamburger-animation" } },
+    { params: { component: "hamburger" } },
   ];
 }
 const { component } = Astro.params;

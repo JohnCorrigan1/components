@@ -10,66 +10,79 @@ import {
 import ComponentCategory from "./ComponentCategory.astro";
 ---
 
-<a
-  href="/"
-  class="text-white py-5 pt-10 w-full text-center hover:text-emerald-500 text-xl font-semibold"
-  >Home</a
->
-<ComponentCategory name="Navigation" />
-{
-  navComponents.map((component) => {
-    return (
-      <ComponentLink
-        name={component.name}
-        link={component.link}
-      />
-    );
-  })
-}
-<ComponentCategory name="Cards" />
-{
-  cardComponents.map((component) => {
-    return (
-      <ComponentLink
-        name={component.name}
-        link={component.link}
-      />
-    );
-  })
-}
+<div class="flex flex-col gap-5 mr-auto ml-auto py-10">
+  <div class="w-full flex flex-col items-center gap-5">
+    <a
+      href="/"
+      class="text-white hover:text-emerald-500 text-xl font-semibold"
+      >Components</a
+    >
+    <span class="h-1 w-full bg-gray-600"></span>
+  </div>
+  <div class="flex flex-col gap-1">
+    <ComponentCategory name="Navigation" />
+    {
+      navComponents.map((component) => {
+        return (
+          <ComponentLink
+            name={component.name}
+            link={component.link}
+          />
+        );
+      })
+    }
+  </div>
+  <div class="flex flex-col gap-1">
+    <ComponentCategory name="Cards" />
+    {
+      cardComponents.map((component) => {
+        return (
+          <ComponentLink
+            name={component.name}
+            link={component.link}
+          />
+        );
+      })
+    }
+  </div>
+  <div>
+    <ComponentCategory name="Heros" />
+    {
+      heroComponents.map((component) => {
+        return (
+          <ComponentLink
+            name={component.name}
+            link={component.link}
+          />
+        );
+      })
+    }
+  </div>
 
-<ComponentCategory name="Heros" />
-{
-  heroComponents.map((component) => {
-    return (
-      <ComponentLink
-        name={component.name}
-        link={component.link}
-      />
-    );
-  })
-}
-
-<ComponentCategory name="Forms" />
-{
-  formComponents.map((component) => {
-    return (
-      <ComponentLink
-        name={component.name}
-        link={component.link}
-      />
-    );
-  })
-}
-
-<ComponentCategory name="Buttons" />
-{
-  buttonComponents.map((component) => {
-    return (
-      <ComponentLink
-        name={component.name}
-        link={component.link}
-      />
-    );
-  })
-}
+  <div class="flex flex-col">
+    <ComponentCategory name="Forms" />
+    {
+      formComponents.map((component) => {
+        return (
+          <ComponentLink
+            name={component.name}
+            link={component.link}
+          />
+        );
+      })
+    }
+  </div>
+  <div class="flex flex-col">
+    <ComponentCategory name="Buttons" />
+    {
+      buttonComponents.map((component) => {
+        return (
+          <ComponentLink
+            name={component.name}
+            link={component.link}
+          />
+        );
+      })
+    }
+  </div>
+</div>

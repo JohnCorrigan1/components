@@ -3,10 +3,11 @@ import ComponentMap from "./ComponentMap.astro";
 ---
 
 <div
-  class="mr-auto w-1/5 min-w-[250px] h-screen hidden xl:block py-10">
+  class="mr-auto w-1/5 min-w-[250px] h-screen hidden xl:block">
   <section
     transition:persist
-    class="mr-auto w-1/5 h-full hidden xl:flex flex-col font-semibold text-lg min-w-[250px] bg-opacity-20 overflow-y-scroll fixed">
+    id="sideNav"
+    class="mr-auto w-1/5 h-full hidden xl:flex flex-col font-semibold text-lg min-w-[250px] bg-opacity-20 overflow-y-scroll fixed side-scroll">
     <ComponentMap />
     <ComponentMap />
     <ComponentMap />
@@ -15,7 +16,7 @@ import ComponentMap from "./ComponentMap.astro";
 </div>
 <div
   id="mobileMenu"
-  class="w-16 absolute top-0 left-0 h-screen z-10 duration-500">
+  class="w-16 absolute top-0 left-0 h-screen z-10 duration-500 side-scroll show-scroll">
   <section class="xl:hidden flex">
     <div
       id="hamburger"
@@ -29,13 +30,28 @@ import ComponentMap from "./ComponentMap.astro";
         class="bg-white h-0.5 w-6 duration-300"></span>
     </div>
   </section>
-  <div id="map" class="hidden flex-col">
+  <div id="map" class="hidden flex-col side-scroll">
+    <ComponentMap />
+    <ComponentMap />
+    <ComponentMap />
+    <ComponentMap />
+    <ComponentMap />
     <ComponentMap />
   </div>
 </div>
 
 <script>
   document?.addEventListener("astro:page-load", () => {
+    const sideNav = document.getElementById("sideNav");
+    sideNav?.addEventListener("mouseenter", () => {
+      // show scroll bar
+      sideNav?.classList.add("show-scroll");
+    });
+    sideNav?.addEventListener("mouseleave", () => {
+      // hide scroll bar
+      sideNav?.classList.remove("show-scroll");
+    });
+
     const hamburger = document.getElementById("hamburger");
     hamburger?.addEventListener("click", () => {
       const top = document.getElementById("top");
@@ -56,6 +72,45 @@ import ComponentMap from "./ComponentMap.astro";
       map?.classList.toggle("hidden");
       menu?.classList.toggle("overflow-y-scroll");
       document?.body?.classList.toggle("overflow-hidden");
+      if (menu?.classList.contains("w-full")) {
+        setTimeout(() => {
+          hamburger?.classList.toggle("absolute");
+          hamburger?.classList.toggle("fixed");
+          hamburger?.classList.toggle("right-5");
+          hamburger?.classList.toggle("right-7");
+        }, 500);
+      } else {
+        hamburger?.classList.toggle("absolute");
+        hamburger?.classList.toggle("fixed");
+        hamburger?.classList.toggle("right-5");
+        hamburger?.classList.toggle("right-7");
+      }
     });
   });
 </script>
+
+<style>
+  .side-scroll::-webkit-scrollbar {
+    width: 6px;
+    /* border-radius: 10px; */
+  }
+
+  ::-webkit-scrollbar-track {
+    /* background-color: #666; */
+  }
+
+  .side-scroll::-webkit-scrollbar-thumb {
+    scroll-behavior: smooth;
+    background-color: rgba(95, 179, 161, 0.1);
+    border-top-right-radius: var(--thumb-radius-top);
+    border-top-left-radius: var(--thumb-radius-top);
+    border-bottom-right-radius: var(--thumb-radius-bottom);
+    border-bottom-left-radius: var(--thumb-radius-bottom);
+  }
+
+  .show-scroll::-webkit-scrollbar-thumb {
+    transition: background-color 4.5s ease-in-out;
+    background-color: rgba(95, 179, 161, 1);
+    /* background-color: #5fb3a1; */
+  }
+</style>

@@ -18,6 +18,19 @@ const { title } = Astro.props;
       type="image/svg+xml"
       href="/favicon.svg"
     />
+    <link
+      rel="preconnect"
+      href="https://fonts.googleapis.com"
+    />
+    <link
+      rel="preconnect"
+      href="https://fonts.gstatic.com"
+      crossorigin
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap"
+      rel="stylesheet"
+    />
     <meta name="generator" content={Astro.generator} />
     <title>{title}</title>
     <ViewTransitions />
@@ -40,7 +53,9 @@ const { title } = Astro.props;
         );
       }
       html {
-        font-family: system-ui, sans-serif;
+        /* font-family: system-ui, sans-serif; */
+        /* font-family: "Montserrat", sans-serif; */
+        font-family: Arial, Helvetica, sans-serif;
         background: #13151a;
         background-size: 224px;
       }

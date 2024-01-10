@@ -6,37 +6,20 @@ import ComponentList from "../components/ComponentList.astro";
 <Layout title="Components">
   <main
     class="flex w-full min-w-[100vw] h-full max-w-[100vw]">
-    <ComponentList transition:persist />
-
+    <ComponentList />
     <section
       class="w-full h-full flex justify-center items-center p-20 flex-col gap-10">
       <h1
-        class="text-transparent bg-clip-text bg-gradient-to-br from-emerald-600 to-teal-600 font-bold text-5xl text-center max-w-[500px]">
-        HTML + Tailwind only code snippets
+        class="text-transparent bg-clip-text bg-gradient-to-br from-emerald-600 to-teal-600 font-bold text-center max-w-[500px]">
+        HTML & Tailwind code snippets
       </h1>
-      <button
-        class="bg-gradient-to-br from-emerald-600 to-teal-700 font-semibold text-2xl px-3 py-2 rounded-lg">
-        <a href="/components/navbar">Components</a>
-      </button>
     </section>
   </main>
-
   <style>
-    main {
-      color: white;
-      font-size: 20px;
-      line-height: 1.6;
-    }
-    .button {
-      background-image: var(--accent-gradient);
-    }
-
-    .text-gradient {
-      background-image: var(--accent-gradient);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      background-size: 400%;
-      background-position: 0%;
+    h1 {
+      font-size: 3rem;
+      line-height: 1.2;
+      font-family: "Roboto", serif;
     }
   </style>
 </Layout>

@@ -1,25 +1,81 @@
 ---
 import Layout from "../layouts/Layout.astro";
 import ComponentList from "../components/ComponentList.astro";
+import CardLink from "../components/CardLink.astro";
+const previews = [
+  {
+    title: "Buttons",
+    link: "/hamburger",
+  },
+  {
+    title: "Navigation",
+    link: "/navbar",
+  },
+  {
+    title: "Cards",
+    link: "/card",
+  },
+  {
+    title: "Forms",
+    link: "/contact-form",
+  },
+  {
+    title: "Heros",
+    link: "/hero",
+  },
+  {
+    title: "Footers",
+    link: "/footer",
+  },
+];
 ---
 
 <Layout title="Components">
   <main
-    class="flex w-full min-w-[100vw] h-full max-w-[100vw]">
+    class="flex w-full min-w-[100vw] min-h-[100vh] h-full max-w-[100vw]">
     <ComponentList />
     <section
-      class="w-full h-full flex justify-center items-center p-20 flex-col gap-10">
-      <h1
-        class="text-transparent bg-clip-text bg-gradient-to-br from-emerald-600 to-teal-600 font-bold text-center max-w-[500px]">
-        HTML & Tailwind code snippets
-      </h1>
+      class="h-full flex p-20 flex-col gap-10 min-h-[100vh] items-center w-full xl:w-4/5">
+      <div class="w-full flex justify-center">
+        <h1
+          class="font-extrabold text-center max-w-[600px] text-white">
+          Just
+          <span
+            class="text-transparent bg-clip-text bg-gradient-to-r from-emerald-500 to-cyan-500 via-teal-500">
+            HTML & Tailwind
+          </span>
+        </h1>
+      </div>
+      <p class="text-white text-center font-semibold mt-10">
+        Copy paste into any frontend.
+      </p>
+      <div
+        class="grid grid-cols-2 xl:grid-cols-3 gap-5 w-full h-full">
+        <CardLink title="Buttons" link="/hamburger" />
+        <CardLink title="Navigation" link="/navbar" />
+        <CardLink title="Cards" link="/" />
+        <CardLink title="Heros" link="/" />
+        <CardLink title="Forms" link="/" />
+        <CardLink title="Footers" link="/" />
+      </div>
     </section>
   </main>
-  <style>
-    h1 {
-      font-size: 3rem;
-      line-height: 1.2;
-      font-family: "Roboto", serif;
-    }
-  </style>
 </Layout>
+<style>
+  h1 {
+    font-size: 3.5rem;
+    line-height: 1.2;
+    font-family: "Roboto", serif;
+  }
+
+  p {
+    font-size: 1.5rem;
+    line-height: 1.2;
+  }
+
+  @media screen and (max-width: 768px) {
+    h1 {
+      font-size: 2.5rem;
+    }
+  }
+</style>

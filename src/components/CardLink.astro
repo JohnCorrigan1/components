@@ -1,0 +1,38 @@
+---
+import Button from "../components/Previews/Button.astro";
+import ModernNav from "../components/Previews/ModernNav.astro";
+const { title, link } = Astro.props;
+---
+
+<a
+  href={link}
+  class="bg-slate-500 rounded-lg flex flex-col items-center text-white h-64 p-10">
+  <div class="h-4/5 flex justify-center items-center">
+    {
+      title === "Buttons" ? (
+        <Button />
+      ) : title === "Navigation" ? (
+        <ModernNav />
+      ) : (
+        <div>preview</div>
+      )
+    }
+  </div>
+  <h3 class="text-xl text-white font-bold h-1/5">
+    {title}
+  </h3>
+</a>
+
+<style>
+  .Buttons {
+    background: linear-gradient(135deg, blue 0%, teal 100%);
+  }
+
+  .Navigation {
+    background: linear-gradient(
+      135deg,
+      purple 0%,
+      pink 100%
+    );
+  }
+</style>

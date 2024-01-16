@@ -6,6 +6,7 @@ import {
   heroComponents,
   formComponents,
   buttonComponents,
+  footerComponents,
 } from "../components";
 import ComponentCategory from "./ComponentCategory.astro";
 ---
@@ -76,6 +77,19 @@ import ComponentCategory from "./ComponentCategory.astro";
     <ComponentCategory name="Buttons" />
     {
       buttonComponents.map((component) => {
+        return (
+          <ComponentLink
+            name={component.name}
+            link={component.link}
+          />
+        );
+      })
+    }
+  </div>
+  <div class="flex flex-col">
+    <ComponentCategory name="Footers" />
+    {
+      footerComponents.map((component) => {
         return (
           <ComponentLink
             name={component.name}

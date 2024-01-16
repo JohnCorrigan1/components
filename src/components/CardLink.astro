@@ -6,13 +6,18 @@ const { title, link } = Astro.props;
 
 <a
   href={link}
-  class="bg-slate-500 rounded-lg flex flex-col items-center text-white h-64 p-10">
+  class=`bg-slate-700 bg-opacity-30 rounded-lg flex flex-col items-center text-white h-64 p-10 hover:bg-slate-600 hover:bg-opacity-30 duration-300`>
   <div class="h-4/5 flex justify-center items-center">
     {
       title === "Buttons" ? (
         <Button />
       ) : title === "Navigation" ? (
         <ModernNav />
+      ) : title == "Forms" ? (
+        <input
+          type="text"
+          class="p-2 rounded-lg border-2 border-white"
+        />
       ) : (
         <div>preview</div>
       )
@@ -25,14 +30,30 @@ const { title, link } = Astro.props;
 
 <style>
   .Buttons {
-    background: linear-gradient(135deg, blue 0%, teal 100%);
+    background: linear-gradient(
+      135deg,
+      rgb(36, 105, 255) 0%,
+      teal 100%
+    );
   }
 
   .Navigation {
-    background: linear-gradient(
-      135deg,
-      purple 0%,
-      pink 100%
-    );
+    background: linear-gradient(0deg, teal 0%, blue 100%);
+  }
+
+  .Cards {
+    background: linear-gradient(45deg, teal 0%, blue 100%);
+  }
+
+  .Heros {
+    background: linear-gradient(45deg, blue 0%, teal 100%);
+  }
+
+  .Forms {
+    background: linear-gradient(180deg, teal 0%, blue 100%);
+  }
+
+  .Footers {
+    background: linear-gradient(315deg, blue 0%, teal 100%);
   }
 </style>

@@ -32,6 +32,10 @@ export const navComponents: ComponentCategory[] = [
     name: "Sidebar",
     link: "/sidebar",
   },
+  {
+    name: "Modern Navbar",
+    link: "/modern-navbar",
+  },
 ];
 
 export const heroComponents: ComponentCategory[] = [
@@ -50,8 +54,19 @@ export const formComponents: ComponentCategory[] = [
 
 export const buttonComponents: ComponentCategory[] = [
   {
+    name: "Button",
+    link: "/button",
+  },
+  {
     name: "Hamburger",
     link: "/hamburger",
+  },
+];
+
+export const footerComponents: ComponentCategory[] = [
+  {
+    name: "Footer",
+    link: "/footer",
   },
 ];
 
@@ -277,5 +292,59 @@ export const componentData: ComponentData[] = [
     category: "Buttons",
     description: "Animatited hamburger component.",
     hasAnimation: true,
+  },
+  {
+    name: "Modern Navbar",
+    link: "/modern-navbar",
+    code: `
+    <nav
+      class="min-w-[300px] rounded-2xl bg-zinc-200 font-semibold">
+      <ul class="text-gray-500 flex items-center">
+        <li
+          class="py-3 text-center w-1/3 hover:text-black cursor-pointer duration-300">
+            <span
+              class="text-white bg-black px-5 py-2 rounded-2xl">
+              Home
+            </span>
+          </li>
+          <li
+            class="py-2 text-center w-1/3 hover:text-black font-bold cursor-pointer duration-300">
+            <span>About</span>
+          </li>
+          <li
+            class="py-2 text-center w-1/3 hover:text-black cursor-pointer duration-300">
+            <span>Contact</span>
+          </li>
+        </ul>
+    </nav>`,
+    category: "Navigation",
+    description: "A simple modern navbar component.",
+    hasAnimation: false,
+  },
+  {
+    name: "Button",
+    link: "/button",
+    code: `
+    <button
+      class="bg-zinc-200 text-black font-semibold px-3 py-2 rounded-lg shadow-lg hover:scale-105 active:scale-95 duration-300">
+      Click me
+    </button>
+    `,
+    category: "Buttons",
+    description: "A simple button component.",
+    hasAnimation: false,
+  },
+  {
+    name: "Footer",
+    link: "/footer",
+    code: `
+    <footer
+      class="w-full bg-slate-700 bg-opacity-20 p-5 flex justify-center items-center text-white">
+      This is a footer
+    </footer>
+`,
+    category: "Footer",
+    description: "A simple footer component.",
+    hasAnimation: false,
   },
 ];

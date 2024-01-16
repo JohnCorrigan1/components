@@ -2,32 +2,6 @@
 import Layout from "../layouts/Layout.astro";
 import ComponentList from "../components/ComponentList.astro";
 import CardLink from "../components/CardLink.astro";
-const previews = [
-  {
-    title: "Buttons",
-    link: "/hamburger",
-  },
-  {
-    title: "Navigation",
-    link: "/navbar",
-  },
-  {
-    title: "Cards",
-    link: "/card",
-  },
-  {
-    title: "Forms",
-    link: "/contact-form",
-  },
-  {
-    title: "Heros",
-    link: "/hero",
-  },
-  {
-    title: "Footers",
-    link: "/footer",
-  },
-];
 ---
 
 <Layout title="Components">
@@ -51,12 +25,15 @@ const previews = [
       </p>
       <div
         class="grid grid-cols-2 xl:grid-cols-3 gap-5 w-full h-full">
-        <CardLink title="Buttons" link="/hamburger" />
-        <CardLink title="Navigation" link="/navbar" />
-        <CardLink title="Cards" link="/" />
-        <CardLink title="Heros" link="/" />
-        <CardLink title="Forms" link="/" />
-        <CardLink title="Footers" link="/" />
+        <CardLink title="Buttons" link="/button" />
+        <CardLink
+          title="Navigation"
+          link="/modern-navbar"
+        />
+        <CardLink title="Cards" link="/full-image-card" />
+        <CardLink title="Heros" link="/hero" />
+        <CardLink title="Forms" link="/contact-form" />
+        <CardLink title="Footers" link="/footer" />
       </div>
     </section>
   </main>
